@@ -4,7 +4,7 @@ plot_increment <- 6 # observations, set to FALSE to suppress
 
 library(tidyverse)
 
-thefiles <- list.files("C:\\Users\\mbtyers\\Documents\\misc\\occupancy\\",
+thefiles <- list.files("data\\",
                        pattern="*.csv", full.names = TRUE)
 alldata <- lapply(thefiles, read_csv) %>% 
   do.call(rbind, .) %>%
@@ -26,7 +26,7 @@ theplot <- alldata %>%
 
 
 
-filename <- paste0("C:\\Users\\mbtyers\\Documents\\misc\\occupancy\\occupancy_", 
+filename <- paste0("data\\occupancy_", 
                    Sys.Date(), ".csv")
 
 fdsa <- readLines("https://portal.rockgympro.com/portal/public/deab289162b917c806673d2ffaea4e47/occupancy?&iframeid=occupancyCounter&fId=")
