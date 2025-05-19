@@ -22,6 +22,7 @@ plot(NA, xlim=range(alldata$dec_hr), ylim=c(0,150),
 axis(side=1, at=1:24, labels=1:24)
 daycols <- adjustcolor(rainbow(7), red.f=.8, green.f=.8, blue.f=.8)
 for(dayi in sort(unique(alldata$day))) {
+  # sort by dec_hr here, that will eliminate the jump
   aa <- subset(alldata, day==dayi)
   points(aa$dec_hr, aa$number, col=daycols[aa$weekdaynum], cex=.5)
   lines(aa$dec_hr, aa$number, col=daycols[aa$weekdaynum])
